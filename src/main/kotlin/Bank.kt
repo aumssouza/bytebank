@@ -10,7 +10,7 @@ fun main(){
         val welcome= "• Welcome to ByteBank •"
         val operationCheck= "• What do you want to do? •"
         val exit= "• Have a good day! •"
-        val currentSaldo="You currently have R$ $saldo"
+        val currentSaldo="You currently have R$ "
         var confirmChoice:String = "aaa"
 
     //run
@@ -22,7 +22,7 @@ fun main(){
     //bank welcomes log in
         println(welcome)
         println("You're logged in as $user")
-        println(currentSaldo)
+        println(currentSaldo + saldo)
         if(saldo<0) println("-= You're in debt! =-")
         println("====")
     //bank operations after logging in
@@ -35,7 +35,7 @@ fun main(){
                             println(operationCost)
                             saldo+=operationCost
                             println("-= Deposit successful! =-")
-                            println(currentSaldo)
+                            println(currentSaldo +saldo)
                             if(saldo<0) println("-= You're in debt! =-")
                             operation = 0
                         }
@@ -46,7 +46,7 @@ fun main(){
                             if(saldo>=operationCost){
                                 saldo-=operationCost
                                 println("-= Withdrawal successful! =-")
-                                println(currentSaldo)
+                                println(currentSaldo + saldo)
                             }else{
                                 println("You don't have enough money in your account")
                                 print("Still want to withdraw? Y/N - ")
@@ -54,12 +54,12 @@ fun main(){
                                 if(confirmChoice == "Y"){
                                     saldo-=operationCost
                                     println("-= Withdrawal successful! =-")
-                                    println(currentSaldo)
+                                    println(currentSaldo + saldo)
                                     println("-= You're in debt! =-")
                                 } else if(confirmChoice=="N"){
                                     println("-= Withdrawal canceled! =-")
-                                    println(currentSaldo)
-                                    println("-= You're in debt! =-")
+                                    println(currentSaldo + saldo)
+                                    if(saldo<0)println("-= You're in debt! =-")
                                 }
                             }
                             operation=0
