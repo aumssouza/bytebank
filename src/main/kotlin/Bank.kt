@@ -32,6 +32,7 @@ fun main(){
                             println("=====")
                             print("Input the value you're going to deposit: ")
                             operationCost=readLine().toString().toDouble()
+                            println(operationCost)
                             saldo+=operationCost
                             println("-= Deposit successful! =-")
                             println(currentSaldo)
